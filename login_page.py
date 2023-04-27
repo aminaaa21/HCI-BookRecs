@@ -42,18 +42,18 @@ validateLogin = partial(validateLogin, root, passwordLabel)
 #login button
 loginButton = Button(root, text="Log In", font=("Times New Roman", 11, "bold"),fg='white', bg="mediumseagreen", command=validateLogin).grid(row=6, column=0, columnspan=2 ,padx=15, pady=10)  
 
-forgotButton = Button(root, text="Forgot password?", fg='blue', command=validateLogin).grid(row=7, column=0, columnspan=2) 
+forgotButton = Button(root, text="Forgot password?", fg='blue').grid(row=7, column=0, columnspan=2) 
 
 noaccount_label = Label(root, text="Don't have an account?", font=("Times New Roman", 11, "bold"))
 noaccount_label.grid(row=8, column=0, columnspan=2, padx= 5, pady= 5)
 
-signupButton = Button(root, text="Sign up", fg='blue', command=validateLogin).grid(row=9, column=0, columnspan=2) 
+signupButton = Button(root, text="Sign up", fg='blue').grid(row=9, column=0, columnspan=2) 
 
 social_label = Label(root, text="Or use one of your social profiles", font=("Times New Roman", 11, "bold"))
 social_label.grid(row=10, column=0, columnspan=2, padx= 5, pady= 5)
 
-twitterButton = Button(root, text="Twitter", fg='white', bg="deep sky blue", command=validateLogin).grid(row=11, column=0)  
-facebookButton = Button(root, text="Facebook", fg='white', bg="navy", command=validateLogin).grid(row=11, column=1, columnspan=2) 
+twitterButton = Button(root, text="Twitter", fg='white', bg="deep sky blue").grid(row=11, column=0)  
+facebookButton = Button(root, text="Facebook", fg='white', bg="navy").grid(row=11, column=1, columnspan=2) 
 
 
 
