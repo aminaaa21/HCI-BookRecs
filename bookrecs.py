@@ -3,11 +3,23 @@ from functools import partial
 from PIL import Image, ImageTk
 
 
+def home_page_window():
+	# create the new window
+	root = Tk()  
+	root.geometry('330x560')  
+	root.title('BookRecs: Home Page')
+
 def sign_up_window():
     # create the new window
 	root = Tk()  
 	root.geometry('330x560')  
 	root.title('BookRecs: Sign up')
+
+	profile_image = Image.open("pfp.png")
+	# Create a label widget and set its image
+	profile_photo = ImageTk.PhotoImage(profile_image)
+	profile_label = Label(root, image=profile_photo)
+	profile_label.grid(row=0, column=0, sticky="ne")
 
 	# Load the image file
 	image = Image.open("bookrecs logo.png")
@@ -16,44 +28,45 @@ def sign_up_window():
 	photo = ImageTk.PhotoImage(resized_image)
 
 	label = Label(root, image=photo)
-	label.grid(row=0,column=0, columnspan=2)
-	
+	label.grid(row=0, column=0, columnspan=3, padx=20, pady=20)
+	root.grid_columnconfigure(1, weight=1)
+	root.grid_columnconfigure(2, weight=1)
+
 	nameLabel = Label(root, text="Full Name", font=("Times New Roman", 11, "bold"))
-	nameLabel.grid(row=1, column=0, padx=5, pady=5)
+	nameLabel.grid(row=1, column=0, columnspan=3, padx=5, pady=(20, 0)) 
 
 	nameEntry = Entry(root, textvariable=nameLabel)
-	nameEntry.grid(row=2, column=0, padx=5, pady=5)  
+	nameEntry.grid(row=2, column=0, columnspan=3, padx=5, pady=5)    
 	
 	ageLabel = Label(root, text="Age", font=("Times New Roman", 11, "bold"))
-	ageLabel.grid(row=3, column=0, padx=5, pady=5)
+	ageLabel.grid(row=3, column=0, columnspan=3, padx=5, pady=(20, 0))  
 
 	ageEntry = Entry(root, textvariable=ageLabel)
-	ageEntry.grid(row=4, column=0, padx=5, pady=5)  
+	ageEntry.grid(row=4, column=0, columnspan=3, padx=5, pady=5)  
 
 	emailLabel = Label(root, text="Email", font=("Times New Roman", 11, "bold"))
-	emailLabel.grid(row=5, column=0, padx=5, pady=5)
+	emailLabel.grid(row=5, column=0, columnspan=3, padx=5, pady=(20, 0))  
 
 	emailEntry = Entry(root, textvariable=emailLabel)
-	emailEntry.grid(row=6, column=0, padx=5, pady=5)  
+	emailEntry.grid(row=6, column=0, columnspan=3, padx=5, pady=5)    
 
 	#password label and password entry box
 	passwordLabel = Label(root,text="Password", font=("Times New Roman", 11, "bold"))
-	passwordLabel.grid(row=7, column=0, padx=5, pady=5)
+	passwordLabel.grid(row=7, column=0, columnspan=3, padx=5, pady=(20, 0))  
 
 	passwordEntry = Entry(root, textvariable=passwordLabel, show='*')
-	passwordEntry.grid(row=8, column=0, padx=5, pady=5)  
+	passwordEntry.grid(row=8, column=0, columnspan=3, padx=5, pady=5)   
 
 	verify_passwordLabel = Label(root,text="Verify Password", font=("Times New Roman", 11, "bold"))
-	verify_passwordLabel.grid(row=9, column=0, padx=5, pady=5)
+	verify_passwordLabel.grid(row=9, column=0, columnspan=3, padx=5, pady=(20, 0))  
 
 	verify_passwordEntry = Entry(root, textvariable=passwordLabel, show='*')
-	verify_passwordEntry.grid(row=10, column=0,padx=5, pady=5) 
+	verify_passwordEntry.grid(row=10, column=0, columnspan=3, padx=5, pady=5)  
 	#validateLogin = partial(validateLogin, root, passwordLabel)
 
 	#login button
-	loginButton = Button(root, text="Log In", font=("Times New Roman", 11, "bold"),fg='white', bg="mediumseagreen") #, command=validateLogin)
-	loginButton.grid(row=11, column=0 ,padx=15, pady=10)  
-
+	signupButton = Button(root, text="Sign Up", font=("Times New Roman", 11, "bold"),fg='white', bg="mediumseagreen") #, command=validateLogin)
+	signupButton.grid(row=11, column=0, columnspan=3, padx=20, pady=20)    
 
     # run the new window
 	root.mainloop()
