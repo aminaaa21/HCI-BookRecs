@@ -9,6 +9,23 @@ def home_page_window():
 	root.geometry('330x560')  
 	root.title('BookRecs: Home Page')
 
+def home_window():
+	root = Tk()  
+	root.geometry('330x560')  
+	root.title('BookRecs: Home Page')
+
+	profile_image = Image.open("pfp.png")
+	# Create a label widget and set its image
+	profile_photo = ImageTk.PhotoImage(profile_image)
+	profile_label = Label(root, image=profile_photo)
+	profile_label.grid(row=0, column=0)
+
+
+	welcometextLabel = Label(root, text="Hi! What would you like to read?", font=("Times New Roman", 16, "bold"))
+	welcometextLabel.grid(row=1, column=0, columnspan=3, padx=15, pady=5) 
+
+
+
 def sign_up_window():
     # create the new window
 	root = Tk()  
@@ -60,12 +77,12 @@ def sign_up_window():
 	verify_passwordLabel = Label(root,text="Verify Password", font=("Times New Roman", 11, "bold"))
 	verify_passwordLabel.grid(row=9, column=0, columnspan=3, padx=5, pady=(20, 0))  
 
-	verify_passwordEntry = Entry(root, textvariable=passwordLabel, show='*')
+	verify_passwordEntry = Entry(root, textvariable=verify_passwordLabel, show='*')
 	verify_passwordEntry.grid(row=10, column=0, columnspan=3, padx=5, pady=5)  
 	#validateLogin = partial(validateLogin, root, passwordLabel)
 
 	#login button
-	signupButton = Button(root, text="Sign Up", font=("Times New Roman", 11, "bold"),fg='white', bg="mediumseagreen") #, command=validateLogin)
+	signupButton = Button(root, text="Sign Up", font=("Times New Roman", 11, "bold"),fg='white', bg="mediumseagreen", command=lambda:[root.destroy(), home_window()])
 	signupButton.grid(row=11, column=0, columnspan=3, padx=20, pady=20)    
 
     # run the new window

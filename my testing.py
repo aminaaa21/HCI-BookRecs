@@ -60,7 +60,7 @@ def sign_up_window():
 	verify_passwordLabel = Label(root,text="Verify Password", font=("Times New Roman", 11, "bold"))
 	verify_passwordLabel.grid(row=9, column=0, columnspan=3, padx=5, pady=(20, 0))  
 
-	verify_passwordEntry = Entry(root, textvariable=passwordLabel, show='*')
+	verify_passwordEntry = Entry(root, textvariable=verify_passwordLabel, show='*')
 	verify_passwordEntry.grid(row=10, column=0, columnspan=3, padx=5, pady=5)  
 	#validateLogin = partial(validateLogin, root, passwordLabel)
 
