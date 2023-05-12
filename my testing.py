@@ -32,6 +32,15 @@ def sign_up_window():
 	root.grid_columnconfigure(1, weight=1)
 	root.grid_columnconfigure(2, weight=1)
 
+		# adding the three bars on the top
+	image = Image.open("three-bars-icon-28.jpg")
+	resized_image = image.resize((100, 50))
+	# Create a label widget and set its image
+	bars = ImageTk.PhotoImage(resized_image)
+
+	label = Label(root, image=bars)
+	label.grid(row=0, column= 2, sticky = "ne" )
+
 	nameLabel = Label(root, text="Full Name", font=("Times New Roman", 11, "bold"))
 	nameLabel.grid(row=1, column=0, columnspan=3, padx=5, pady=(20, 0)) 
 
@@ -134,7 +143,7 @@ def preference_window(): # my testing
 	#window
 	root = Tk()  
 	root.geometry('330x560')  
-	root.title('BookRecs: preferance window')
+	root.title('BookRecs: Preference')
 	# profile image on the corner
 
 	profile_image = Image.open("pfp.png")
@@ -151,8 +160,6 @@ def preference_window(): # my testing
 
 	label = Label(root, image=bars)
 	label.grid(row=0, column= 2, sticky = "ne" )
-
-	
     
 	#sapcer, made from empty label 
 	spacer_Label = Label(root, text="                     ", font=("Times New Roman", 10, "bold"))
@@ -160,7 +167,7 @@ def preference_window(): # my testing
 
 
 	# Create a label widget for the text
-	text_label = Label(root, text="Good day! What do you like to read?", font=("Times New Roman", 12, "bold"))
+	text_label = Label(root, text="Good day! What would you like to read?", font=("Times New Roman", 12, "bold"))
 	text_label.grid(row=2, column=0, columnspan=2, padx= 5, pady= 5)
 
     # question1 label and entry box
@@ -207,7 +214,7 @@ def preference_window(): # my testing
 	book1_name = Label(root,text="Autism in the family", font=("Times New Roman", 9, "bold"))
 	book1_name.grid(row= 17, column=0, padx=5, pady=5)
 
-	buy_book_button = Button(root, text="Buy Book", font=("Times New Roman", 11), fg='white',bg="green", command=lambda:[root.destroy(), reading_window()])
+	buy_book_button = Button(root, text="Buy Book", font=("Times New Roman", 11), fg='white',bg="mediumseagreen", command=lambda:[root.destroy(), reading_window()])
 	buy_book_button.grid(row=18, column=0, padx=4, pady= 4)
 
 	#adding the suggested book 2
@@ -219,7 +226,7 @@ def preference_window(): # my testing
 	label = Label(root, image=photo2)
 	label.grid(row=12,column=1, columnspan=2)
 
-	buy_book_button = Button(root, text="Buy Book", font=("Times New Roman", 11), fg='white',bg="green")
+	buy_book_button = Button(root, text="Buy Book", font=("Times New Roman", 11), fg='white',bg="mediumseagreen")
 	buy_book_button.grid(row=18, column=1, padx=4, pady= 4) 
 	
 	# adding the name of book 2
@@ -244,13 +251,10 @@ def preference_window(): # my testing
 	#label = Label(root, image=photo1)
 	#label.grid(row=24,column=1)
 
-	
-
 	# creating a white box at the bottom  
 	#box = Label(root,width = 50, height = 100, bg = "white" )
 	#box.grid(row=30, column=0, columnspan=5, padx=5, pady=5)
 
-	
 	root.mainloop()
 
 
@@ -258,7 +262,7 @@ def reading_window(): # my testing
 	#window
 	root = Tk()  
 	root.geometry('330x560')  
-	root.title('BookRecs: Reading window')
+	root.title('BookRecs: Reading')
 	# profile image on the corner
 
 	profile_image = Image.open("pfp.png")
@@ -275,10 +279,6 @@ def reading_window(): # my testing
 
 	label = Label(root, image=bars)
 	label.grid(row=0, column= 2, sticky = "ne" )
-
-	
-    
-
 
 	# the name of the book
 	text_label = Label(root, text="Autism in the family        ", font=("Times New Roman", 12, "bold"))
@@ -299,10 +299,10 @@ def reading_window(): # my testing
 
 	#creating the comment button 
 	
-	commentButton = Button(root, text="comment", font=("Times New Roman", 11), fg='white', bg="dark green", command=lambda:[root.destroy(), comment_window()])
+	commentButton = Button(root, text="Comment", font=("Times New Roman", 11), fg='white', bg="mediumseagreen", command=lambda:[root.destroy(), comment_window()])
 	commentButton.grid(row=27, column=0, columnspan=2)  
 
-	libraryButton = Button(root, text="library", font=("Times New Roman", 11), fg='white', bg="dark green")
+	libraryButton = Button(root, text="Library", font=("Times New Roman", 11), fg='white', bg="mediumseagreen")
 	libraryButton.grid(row=27, column=1, columnspan=2) 
 	
 
@@ -317,7 +317,7 @@ def comment_window(): # my testing
 	#window
 	root = Tk()  
 	root.geometry('330x560')  
-	root.title('BookRecs: Comments window')
+	root.title('BookRecs: Comments')
 	# profile image on the corner
 
 	profile_image = Image.open("pfp.png")
@@ -334,10 +334,6 @@ def comment_window(): # my testing
 
 	label = Label(root, image=bars)
 	label.grid(row=0, column= 2, sticky = "ne" )
-
-	
-    
-
 
 	# the name of the book
 	text_label = Label(root, text="Autism in the family        ", font=("Times New Roman", 12, "bold"))
@@ -358,10 +354,10 @@ def comment_window(): # my testing
 
 	#creating the comment button 
 	
-	profileButton = Button(root, text="profile", font=("Times New Roman", 11), fg='white', bg="dark green", command=lambda:[root.destroy(), profile_window()])
+	profileButton = Button(root, text="Profile", font=("Times New Roman", 11), fg='white', bg="mediumseagreen", command=lambda:[root.destroy(), profile_window()])
 	profileButton.grid(row=27, column=0, columnspan=2)  
 
-	libraryButton = Button(root, text="library", font=("Times New Roman", 11), fg='white', bg="dark green")
+	libraryButton = Button(root, text="Library", font=("Times New Roman", 11), fg='white', bg="mediumseagreen")
 	libraryButton.grid(row=27, column=1, columnspan=2) 
 	
 
@@ -376,7 +372,7 @@ def profile_window():
 	#window
 	root = Tk()  
 	root.geometry('330x560')  
-	root.title('BookRecs: profile window')
+	root.title('BookRecs: Profile')
 
 	# Load the image file
 	image = Image.open("pfp.png")
@@ -397,14 +393,11 @@ def profile_window():
 	totalpointsLabel = Label(root, text=" Total points = 60", font=("Times New Roman", 11, "bold"))
 	totalpointsLabel.grid(row=5, column=0, columnspan=5)
 
-
-
 	# The Quiz section -> 
 	Quiz_Label = Label(root, text="Quiz", font=("Times New Roman", 13, "bold"))
 	Quiz_Label.grid(row=6, column=0, columnspan=5,padx =5, pady= 5, sticky= "nw")
 	quiz_Label = Label(root, text="Earn points to buy your next book?", font=("Times New Roman", 10, "bold"))
 	quiz_Label.grid(row=7, column=0, columnspan=5, padx= 5, pady= 5,sticky= "nw")
-
 
 	# question1 label and entry box
 	question1_Label = Label(root, text="What is the name of the right side of the brain?", font=("Times New Roman", 10, "bold"))
@@ -439,22 +432,14 @@ def profile_window():
 	question1_Label = Label(root, text="                     ", font=("Times New Roman", 10, "bold"))
 	question1_Label.grid(row=16, column=0, columnspan=2, padx=5, pady=5, sticky= 'nw')
 
-
 	# log out and books
-	log_out_Button = Button(root, text="Log out", font=("Times New Roman", 11), fg='white', bg="dark green", command=lambda:[root.destroy(), login_window()])
+	log_out_Button = Button(root, text="Log out", font=("Times New Roman", 11), fg='white', bg="mediumseagreen", command=lambda:[root.destroy(), login_window()])
 	log_out_Button.grid(row=17, column=0, columnspan=5, padx = 15, pady = 20)  
 
 	# THIS ONE NOT SURE ABOUT, I can't seem to figure out the spacing on it :/
-	#my_books_Button = Button(root, text="My Books", font=("Times New Roman", 11), fg='white', bg="dark green",command=lambda:[root.destroy(), reading_window()])
+	#my_books_Button = Button(root, text="My Books", font=("Times New Roman", 11), fg='white', bg="mediumseagreen ",command=lambda:[root.destroy(), reading_window()])
 	#my_books_Button.grid(row=17, column=1, columnspan=2, padx= 15, pady = 20) 
-	
-	
 
 	root.mainloop()
- 
-	
-
-	
-
 
 login_window()
