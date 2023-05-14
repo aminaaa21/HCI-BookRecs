@@ -1,5 +1,4 @@
 from tkinter import *
-from functools import partial
 from PIL import Image, ImageTk
 
 
@@ -119,22 +118,22 @@ def login_window():
 	loginButton = Button(root, text="Log In", font=("Times New Roman", 11, "bold"),fg='white', bg="mediumseagreen") #, command=validateLogin)
 	loginButton.grid(row=6, column=0, columnspan=2 ,padx=15, pady=10)  
 
-	forgotButton = Button(root, text="Forgot password?", font=("Times New Roman", 11), fg='blue')
+	forgotButton = Button(root, text="Forgot password?", font=("Times New Roman", 11, "bold"), fg='blue')
 	forgotButton.grid(row=7, column=0, columnspan=2) 
 
 	noaccount_label = Label(root, text="Don't have an account?", font=("Times New Roman", 11, "bold"))
 	noaccount_label.grid(row=8, column=0, columnspan=2, padx= 5, pady= 5)
 
-	signupButton = Button(root, text="Sign up", font=("Times New Roman", 11), fg='blue', command=lambda:[root.destroy(), sign_up_window()])
+	signupButton = Button(root, text="Sign up", font=("Times New Roman", 11, "bold"), fg='blue', command=lambda:[root.destroy(), sign_up_window()])
 	signupButton.grid(row=9, column=0, columnspan=2) 
 
 	social_label = Label(root, text="Or use one of your social profiles", font=("Times New Roman", 11, "bold"))
 	social_label.grid(row=10, column=0, columnspan=2, padx= 5, pady= 5)
 
-	twitterButton = Button(root, text="Twitter", font=("Times New Roman", 11), fg='white', bg="deep sky blue")
+	twitterButton = Button(root, text="Twitter", font=("Times New Roman", 11, "bold"), fg='white', bg="deep sky blue")
 	twitterButton.grid(row=11, column=0)  
 
-	facebookButton = Button(root, text="Facebook", font=("Times New Roman", 11), fg='white', bg="navy")
+	facebookButton = Button(root, text="Facebook", font=("Times New Roman", 11, "bold"), fg='white', bg="navy")
 	facebookButton.grid(row=11, column=1, columnspan=2) 
 
 	root.mainloop()
